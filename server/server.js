@@ -1,11 +1,11 @@
 const PORT = 8000
 const express = require ('express')
+const app = express()
 const cors = require ('cors')
 const axios = require ('axios')
 require('dotenv').config()
 
-const app = express()
-
+// routes
 app.use(cors())
 
 app.get('/movie', (req,res) => {
@@ -28,5 +28,8 @@ app.get('/movie', (req,res) => {
     });
 })
 
-app.listen(8000, () => console.log(`server is running on port ${PORT}`))
+//how to start listening to the server
+app.listen(8000, () => console.log(`app listening on port 8000!`))
+
+
 
