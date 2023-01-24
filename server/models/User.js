@@ -14,7 +14,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  movies: [{isWatched: Boolean, Movie}],
+  movies: {type: [Movie.schema], isWatched: Boolean},
 });
 
 userSchema.pre("save", async function (next) {
